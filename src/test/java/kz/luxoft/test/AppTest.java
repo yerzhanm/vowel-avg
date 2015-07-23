@@ -10,8 +10,8 @@ public class AppTest
 {
     @Test
     public void test1(){
-        List<String> words = App.readWords(getClass().getClassLoader().getResource("test-resources/input1.txt").getPath());
-        List<WordSet> wordsAvg = App.calculateAvg(words);
+        List<String> words = FileOperations.readWords(getClass().getClassLoader().getResource("test-resources/input1.txt").getPath());
+        List<WordSet> wordsAvg = WordAvgCalculator.calculateAvg(words);
 
         WordSet ws1 = new WordSet();
         Set<Character> ch1 = new HashSet<Character>();
@@ -50,8 +50,8 @@ public class AppTest
 
     @Test
     public void test2(){
-        List<String> words = App.readWords(getClass().getClassLoader().getResource("test-resources/input2.txt").getPath());
-        List<WordSet> wordsAvg = App.calculateAvg(words);
+        List<String> words = FileOperations.readWords(getClass().getClassLoader().getResource("test-resources/input2.txt").getPath());
+        List<WordSet> wordsAvg = WordAvgCalculator.calculateAvg(words);
 
         WordSet ws1 = new WordSet();
         Set<Character> ch1 = new HashSet<Character>();
@@ -68,8 +68,8 @@ public class AppTest
 
     @Test
     public void test3(){
-        List<String> words = App.readWords(getClass().getClassLoader().getResource("test-resources/input3.txt").getPath());
-        List<WordSet> wordsAvg = App.calculateAvg(words);
+        List<String> words = FileOperations.readWords(getClass().getClassLoader().getResource("test-resources/input3.txt").getPath());
+        List<WordSet> wordsAvg = WordAvgCalculator.calculateAvg(words);
 
         Assert.assertEquals(wordsAvg.get(0).toString(), "({e, o}, 8) -> 3");
         Assert.assertEquals(wordsAvg.get(1).toString(), "({a, e}, 8) -> 3");
@@ -81,9 +81,9 @@ public class AppTest
 
     @Test
     public void test4(){
-        List<String> words = App.readWords(getClass().getClassLoader().getResource("test-resources/input4.txt").getPath());
+        List<String> words = FileOperations.readWords(getClass().getClassLoader().getResource("test-resources/input4.txt").getPath());
         Assert.assertTrue(words.isEmpty());
-        List<WordSet> wordsAvg = App.calculateAvg(words);
+        List<WordSet> wordsAvg = WordAvgCalculator.calculateAvg(words);
         Assert.assertTrue(wordsAvg.isEmpty());
     }
 }
