@@ -13,13 +13,12 @@ OUTPUT
 ({a, o}, 5) -> 2
 ({a, e}, 4) -> 2
 
-####
-vowels
+# vowels
 A, E, I, O, U, and sometimes Y
 In this task Y is considered as consonant
 
-To run : mvn clean install exec:java
-To run test : mvn clean test
-package : mvn clean package
+ - To run : mvn clean install exec:java
+ - To run test : mvn clean test
+ - package : mvn clean package
 
-After running you need to enter absolute path of input file
+After running you need to enter absolute path to input file
